@@ -11,6 +11,13 @@ public class SinWavePattern : MonoBehaviour {
 
 	bool isSpawning;
 
+	float fInitalZPos;
+	
+	void Awake()
+	{
+		fInitalZPos = transform.position.z;
+	}
+
 	// Use this for initialization
 	void Start () {
 		fTimer = 0.0f;
@@ -24,7 +31,7 @@ public class SinWavePattern : MonoBehaviour {
 		camRight = Camera.main.ScreenToWorldPoint(new Vector3 (Screen.width, 0.0f, 100.0f));
 		camBottom = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 100.0f));
 		
-		if (camTop.z + 2.0f >= transform.position.z)
+		if (camTop.z + 2.0f >= fInitalZPos)
 		{
 			isSpawning = true;
 		}

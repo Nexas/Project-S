@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Player : MonoBehaviour {
@@ -16,7 +16,6 @@ public class Player : MonoBehaviour {
 
 	int iWeaponLevel;
 	int iPowerupCounter;
-	bool bSecondWeaponSpawned;
 
 	float invulnerableTimer;
 	float halfScreenWidth;
@@ -45,7 +44,6 @@ public class Player : MonoBehaviour {
 		float halfScreenHeight = Screen.height / 2.0f;
 		iWeaponLevel = 1;
 		iPowerupCounter = 0;
-		bSecondWeaponSpawned = false;
 	}
 	
 	// Update is called once per frame
@@ -239,13 +237,6 @@ public class Player : MonoBehaviour {
 				else if (iWeaponLevel == 3)
 				{
 					orbPosition.x -= 10.0f;
-					if (!bSecondWeaponSpawned)
-					{
-						GameObject firstOrb = GameObject.FindGameObjectWithTag("Orb");
-						firstOrb.transform.position = new Vector3(transform.position.x + 10.0f, transform.position.y, transform.position.z);
-						orb1.transform.position = new Vector3(transform.position.x + 10.0f, transform.position.y, transform.position.z);
-						bSecondWeaponSpawned = true;
-					}
 					Transform t = Instantiate(orb, orbPosition, transform.rotation) as Transform;
 					GameObject o = t.gameObject;
 					o.GetComponent<PlayerOrb>().bRightOrb = false;

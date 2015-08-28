@@ -1,57 +1,19 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HorizontalLineSpawner.cs">
     <Files>
-      <File FileName="Assets\Scripts\Knife.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="216" Column="17" />
-      <File FileName="Assets\Scripts\Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameGod.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Spawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SinWavePattern.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MidSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BossMechaShark.cs" Line="96" Column="32" />
-      <File FileName="Assets\Scripts\HorizontalLineSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnvironmentObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerBomb.cs" Line="19" Column="24" />
-      <File FileName="Assets\Scripts\IntersectingBeamBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BaseBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="17" Column="14" />
-      <File FileName="Assets\Scripts\SplittingBeam.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyBeam.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerOrb.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EndCheckpoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameLives.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LeftToRightPattern.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyThreeShot.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\LeftSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WeaponPowerup.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemySinWave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SinWaveBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CosWaveBullet.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenuOptions.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenuControls.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenuStart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenuExit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OptionsTitle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OptionsBack.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OptionsControls.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\OscillatingWave.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SplittingBeamBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameBombs.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RightSpawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MainMenuTitle.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Game Menu.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player.cs" Line="46" Column="23" />
+      <File FileName="Assets\Scripts\PlayerOrb.cs" Line="5" Column="2" />
+      <File FileName="Assets\Scripts\RightToLeftPattern.cs" Line="40" Column="1" />
+      <File FileName="Assets\Scripts\RightSpawner.cs" Line="74" Column="1" />
+      <File FileName="Assets\Scripts\LeftToRightPattern.cs" Line="40" Column="1" />
+      <File FileName="Assets\Scripts\LeftSpawner.cs" Line="75" Column="1" />
+      <File FileName="Assets\Scripts\SinWavePattern.cs" Line="43" Column="1" />
+      <File FileName="Assets\Scripts\HorizontalLineSpawner.cs" Line="38" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\nexas\Documents\Unity Backups\New Unity Project 1\Assets\Scripts\MainMenuTitle.cs" line="42" />
-      <Breakpoint file="C:\Users\nexas\Documents\Unity Backups\New Unity Project 1\Assets\Scripts\MainMenuStart.cs" line="54" />
-      <Breakpoint file="C:\Users\nexas\Documents\Unity Backups\New Unity Project 1\Assets\Scripts\MainMenuExit.cs" line="54" />
-      <Breakpoint file="C:\Users\nexas\Documents\Unity Backups\New Unity Project 1\Assets\Scripts\MainMenuOptions.cs" line="54" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

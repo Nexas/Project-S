@@ -18,6 +18,13 @@ public class LeftSpawner : MonoBehaviour {
 	// These variables will be set on conditions.
 	bool isSpawning;
 	float spawnTimer;
+
+	float fInitalZPos;
+	
+	void Awake()
+	{
+		fInitalZPos = transform.position.z;
+	}
 	
 	
 	// Use this for initialization
@@ -33,7 +40,7 @@ public class LeftSpawner : MonoBehaviour {
 		camRight = Camera.main.ScreenToWorldPoint(new Vector3 (Screen.width, 0.0f, 100.0f));
 		camBottom = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 100.0f));
 		
-		if (camTop.z + 2.0f >= transform.position.z)
+		if (camTop.z + 2.0f >= fInitalZPos)
 		{
 			if (!isSpawning)
 			{
