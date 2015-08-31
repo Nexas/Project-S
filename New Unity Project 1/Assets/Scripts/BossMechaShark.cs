@@ -17,6 +17,8 @@ public class BossMechaShark : MonoBehaviour {
 	public Material[] materials;
 	float flashTimer;			// How long to flash white.
 	bool isFlashing;			// Whether or not to flash white.
+    public Texture2D bgEmptyBar;       // The texture for the empty health bar.
+    public Texture2D fgLifeBar;          // The texture for the health bar.
 
 	// Use this for initialization
 	void Start () {
@@ -119,4 +121,13 @@ public class BossMechaShark : MonoBehaviour {
 			}
 		}
 	}
+
+    void OnGUI()
+    {
+        if (bOnScreen && nCurrentHealth > 0)
+        {
+            GUI.DrawTexture(new Rect(0, 0, Screen.width, 16), bgEmptyBar);
+            GUI.DrawTexture(new Rect(0, 0, Mathf.Lerp(nCurrentHealth, nMaxHealth, Time.time), 16), fgLifeBar);
+        }
+    }
 }

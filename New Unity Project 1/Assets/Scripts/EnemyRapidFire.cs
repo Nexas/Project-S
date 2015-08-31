@@ -8,9 +8,10 @@ public class EnemyRapidFire : MonoBehaviour {
 	float bulletCooldown;
 	public Transform eBullet;
 	bool bOnScreen;
-	Vector3 camRight;
-	Vector3 camLeft;
-	Vector3 camBot;
+    Vector3 camRight;
+    Vector3 camLeft;
+    Vector3 camBottom;
+    Vector3 camTop;
 	int numShots;
 	bool readyFire;
 	public Transform powerup;
@@ -27,9 +28,10 @@ public class EnemyRapidFire : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		camLeft = Camera.main.ScreenToWorldPoint(new Vector3 (0.0f, 0.0f, 100.0f));
-		camRight = Camera.main.ScreenToWorldPoint(new Vector3 (Screen.width, 0.0f, 100.0f));
-		camBot = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 100.0f));
+        camLeft = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 100.0f));
+        camTop = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, 100.0f));
+        camRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 100.0f));
+        camBottom = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 100.0f));
 		
 		bulletTimer -= Time.deltaTime;
 
@@ -75,11 +77,11 @@ public class EnemyRapidFire : MonoBehaviour {
 			}
 			Destroy(gameObject);
 		}
-		
-		if (transform.position.z < camLeft.z - 2.5f)
-		{
-			Destroy(this.gameObject);
-		}
+
+        if (transform.position.x < camLeft.x - 2.5f || transform.position.x > camRight.x + 2.5f || transform.position.z < camBottom.z - 2.5f)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 	
 	void SpawnBullet(Vector3 vel)

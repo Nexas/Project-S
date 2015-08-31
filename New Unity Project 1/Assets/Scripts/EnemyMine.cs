@@ -6,6 +6,8 @@ public class EnemyMine : MonoBehaviour {
 	public Transform eBullet;
 	public Transform effect;
 
+    Vector3 camBottom;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -13,7 +15,12 @@ public class EnemyMine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        camBottom = Camera.main.ScreenToWorldPoint(new Vector3(0.0f, 0.0f, 100.0f));
+
+        if (transform.position.z < camBottom.z - 2.5f)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
 	void SpawnBullet(Vector3 vel)
