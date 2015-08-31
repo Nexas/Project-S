@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class PlayerOrb : MonoBehaviour {
@@ -15,15 +15,14 @@ public class PlayerOrb : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 playerPos = GameGod.playerPos;
-		if (bRightOrb)
-			playerPos.x += 10.0f;
-		else
-			playerPos.x -= 10.0f;
+        Vector3 pos = GameGod.playerPos;
+        fAttackSpeed -= Time.deltaTime;
+        if (bRightOrb)
+            pos.x += 10.0f;
+        else
+            pos.x -= 10.0f;
 
-		transform.position = playerPos;
-		fAttackSpeed -= Time.deltaTime;
-
+        transform.position = pos;
 
 		if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Mouse0))
 		{
