@@ -126,8 +126,10 @@ public class BossMechaShark : MonoBehaviour {
     {
         if (bOnScreen && nCurrentHealth > 0)
         {
-            GUI.DrawTexture(new Rect(0, 0, Screen.width, 16), bgEmptyBar);
-            GUI.DrawTexture(new Rect(0, 0, Mathf.Lerp(nCurrentHealth, nMaxHealth, Time.time), 16), fgLifeBar);
+			GUI.depth = -1;
+            GUI.DrawTexture(new Rect(0, 0, Screen.width, 16), bgEmptyBar, ScaleMode.StretchToFill);
+			GUI.depth = 0;
+            GUI.DrawTexture(new Rect(0, 0, ((float)nCurrentHealth / (float)nMaxHealth) * (float)Screen.width, 16), fgLifeBar);
         }
     }
 }
