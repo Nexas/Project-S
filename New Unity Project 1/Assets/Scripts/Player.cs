@@ -122,9 +122,9 @@ public class Player : MonoBehaviour {
 					{
 						SpawnBullet(transform.position, new Vector3(0.0f, 0.0f, 100.0f));
 						if (iWeaponLevel >= 2)
-							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-50.0f, 0.0f, 100.0f));
+							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-25.0f, 0.0f, 100.0f));
 						if (iWeaponLevel == 3)
-							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(50.0f, 0.0f, 100.0f));
+							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(25.0f, 0.0f, 100.0f));
 						fAttackTimer = 0.0f;
 					}
 					//SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-50.0f, 0.0f, 100.0f));
@@ -152,9 +152,9 @@ public class Player : MonoBehaviour {
 					{
 						SpawnBullet(transform.position, new Vector3(0.0f, 0.0f, 100.0f));
 						if (iWeaponLevel >= 2)
-							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-50.0f, 0.0f, 100.0f));
+							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-25.0f, 0.0f, 100.0f));
 						if (iWeaponLevel == 3)
-							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(50.0f, 0.0f, 100.0f));
+							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(25.0f, 0.0f, 100.0f));
 						fAttackTimer = 0.0f;
 					}
 
@@ -222,13 +222,13 @@ public class Player : MonoBehaviour {
 		{
 			Destroy(collider.gameObject);
 			iPowerupCounter += 1;
-			if (iPowerupCounter >= 15 && iWeaponLevel < 3)
+			if (iPowerupCounter >= 15 && iWeaponLevel < 5)
 			{
 				Vector3 orbPosition = transform.position;
 
 				iWeaponLevel += 1;
 				iPowerupCounter = 0;
-				if (iWeaponLevel == 2)
+				if (iWeaponLevel == 4)
 				{
 					orbPosition.x += 10.0f;
 					Transform t = Instantiate(orb, orbPosition, transform.rotation) as Transform;
@@ -236,7 +236,7 @@ public class Player : MonoBehaviour {
 					o.GetComponent<PlayerOrb>().bRightOrb = true;
 					orb1 = o;
 				}
-				else if (iWeaponLevel == 3)
+				else if (iWeaponLevel == 5)
 				{
 					orbPosition.x -= 10.0f;
 					if (!bSecondWeaponSpawned)

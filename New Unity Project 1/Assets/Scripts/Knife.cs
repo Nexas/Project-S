@@ -18,12 +18,10 @@ public class Knife : MonoBehaviour {
 		if (!rend.isVisible)
 			Destroy (gameObject);
 
-        if (!enemyFound)
-        {
-            target = FindClosestEnemyWithTag("enemy");
-            if (!enemyFound)
-                target = FindClosestEnemyWithTag("Environment");
-        }
+        target = FindClosestEnemyWithTag("enemy");
+		if (target == null)
+            target = FindClosestEnemyWithTag("Environment");
+        
 
         if (target)
         {

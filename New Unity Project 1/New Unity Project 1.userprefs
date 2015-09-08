@@ -1,9 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossMechaShark.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
     <Files>
-      <File FileName="Assets\Scripts\BossMechaShark.cs" Line="94" Column="56" />
-      <File FileName="Assets\Scripts\GameGod.cs" Line="72" Column="3" />
+      <File FileName="Assets\Scripts\Player.cs" Line="144" Column="40" />
+      <File FileName="Assets\Scripts\EnemyDeathEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\BossMechaShark.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameGod.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerBomb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerOrb.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Knife.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnvironmentObject.cs" Line="26" Column="33" />
+      <File FileName="Assets\Scripts\Bullet.cs" Line="26" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
