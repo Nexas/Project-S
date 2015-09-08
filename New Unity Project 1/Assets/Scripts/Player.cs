@@ -122,9 +122,9 @@ public class Player : MonoBehaviour {
 					{
 						SpawnBullet(transform.position, new Vector3(0.0f, 0.0f, 100.0f));
 						if (iWeaponLevel >= 2)
-							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-25.0f, 0.0f, 100.0f));
-						if (iWeaponLevel == 3)
-							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(25.0f, 0.0f, 100.0f));
+							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(15.0f, 0.0f, 100.0f));
+						if (iWeaponLevel >= 3)
+							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-15.0f, 0.0f, 100.0f));
 						fAttackTimer = 0.0f;
 					}
 					//SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-50.0f, 0.0f, 100.0f));
@@ -152,9 +152,9 @@ public class Player : MonoBehaviour {
 					{
 						SpawnBullet(transform.position, new Vector3(0.0f, 0.0f, 100.0f));
 						if (iWeaponLevel >= 2)
-							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-25.0f, 0.0f, 100.0f));
-						if (iWeaponLevel == 3)
-							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(25.0f, 0.0f, 100.0f));
+							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(15.0f, 0.0f, 100.0f));
+						if (iWeaponLevel >= 3)
+							SpawnBullet(new Vector3(transform.position.x - 4.0f, transform.position.y, transform.position.z), new Vector3(-15.0f, 0.0f, 100.0f));
 						fAttackTimer = 0.0f;
 					}
 

@@ -18,9 +18,12 @@ public class Knife : MonoBehaviour {
 		if (!rend.isVisible)
 			Destroy (gameObject);
 
-        target = FindClosestEnemyWithTag("enemy");
-		if (target == null)
-            target = FindClosestEnemyWithTag("Environment");
+		// Prioritize target by tag.
+		target = FindClosestEnemyWithTag("Environment");	// 3 - Lowest Priority
+		if (GameObject.FindGameObjectsWithTag("enemy").Length > 0)
+        	target = FindClosestEnemyWithTag("enemy");			// 2 - Medium Priority
+		if (GameObject.FindGameObjectsWithTag("Boss").Length > 0)
+			target = FindClosestEnemyWithTag("Boss");			// 1 - Highest Priority
         
 
         if (target)

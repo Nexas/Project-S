@@ -15,6 +15,7 @@ public class EnemyRapidFire : MonoBehaviour {
 	int numShots;
 	bool readyFire;
 	public Transform powerup;
+	public Transform deathEffect;
 	
 	// Use this for initialization
 	void Start () {
@@ -75,6 +76,7 @@ public class EnemyRapidFire : MonoBehaviour {
 				GameObject pow = t.gameObject;
 				pow.GetComponent<WeaponPowerup>().SetVelocity(direction);
 			}
+			Instantiate(deathEffect, transform.position, transform.rotation);
 			Destroy(gameObject);
 		}
 

@@ -12,6 +12,7 @@ public class EnemyThreeShot : MonoBehaviour {
     Vector3 camBottom;
     Vector3 camTop;
 	public Transform powerup;
+	public Transform deathEffect;
 	
 	// Use this for initialization
 	void Start () {
@@ -53,7 +54,7 @@ public class EnemyThreeShot : MonoBehaviour {
 				GameObject pow = t.gameObject;
 				pow.GetComponent<WeaponPowerup>().SetVelocity(direction);
 			}
-
+			Instantiate(deathEffect, transform.position, transform.rotation);
 			Destroy(gameObject);
 		}
 
