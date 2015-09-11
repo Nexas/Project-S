@@ -7,6 +7,7 @@ public class GameGod : MonoBehaviour {
 	static public Quaternion playerRot;
 	static public bool playerDead;
 	static float respawnTimer;
+	static public float fGameTimer;			// A global timer that simply increments over time.
 	public Transform obj;
 	static public int lives; 
 	static public int bombs;
@@ -39,6 +40,8 @@ public class GameGod : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		fGameTimer += Time.deltaTime;
+
 		if (lives <= 0)
 		{
 			Restart();

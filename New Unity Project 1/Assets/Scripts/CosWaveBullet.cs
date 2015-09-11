@@ -5,12 +5,10 @@ public class CosWaveBullet : MonoBehaviour {
 
 	Vector3 vel;	// Velocity of the bullet.
     Renderer rend;
-	float fTimer;
 	float delayTimer; //Time to delay before moving as a cosine wave.
 	
 	// Use this for initialization
 	void Start () {
-		fTimer = 0.0f;
 		delayTimer = 0.0f;
         rend = GetComponent<Renderer>();
 	}
@@ -18,7 +16,6 @@ public class CosWaveBullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		fTimer += Time.deltaTime * 4.25f;
 		if (delayTimer >= 0.0f)
 			delayTimer -= Time.deltaTime;
         if (!rend.isVisible)
@@ -29,7 +26,7 @@ public class CosWaveBullet : MonoBehaviour {
         if (delayTimer <= 0.0f)
         {
             //forwardVec.x = Mathf.Sin(fTimer) * 0.55f;
-            transform.Translate(new Vector3(Mathf.Cos(fTimer) * 0.55f, 0.0f, 0.0f));
+            transform.Translate(new Vector3(Mathf.Cos(GameGod.fGameTimer * 4.25f) * 0.55f, 0.0f, 0.0f));
         }
 		forwardVec *= 50.0f;
 		transform.Translate(forwardVec * Time.deltaTime);	

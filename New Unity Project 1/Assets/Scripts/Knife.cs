@@ -29,7 +29,7 @@ public class Knife : MonoBehaviour {
         if (target)
         {
             Vector3 targetDir = target.transform.position - transform.position;
-            Vector3 rotDir = Vector3.RotateTowards(transform.forward, targetDir, 50.0f * Time.deltaTime, 0.0f);
+            Vector3 rotDir = Vector3.RotateTowards(transform.forward, targetDir, 1000.0f * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(rotDir);
         }
 

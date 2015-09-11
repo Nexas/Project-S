@@ -45,12 +45,12 @@ public class EnemySinWave : MonoBehaviour {
 		{
 			if (bulletTimer <= 0.0f && numShots > 0)
 			{
-				dirShot -= transform.position;
-				dirShot.Normalize();
-				dirShot *= 50.0f;
+				Vector3 destMinusSource = dirShot - transform.position;
+				destMinusSource.Normalize();
+				destMinusSource *= 50.0f;
 				bulletTimer = .10f;
 				numShots -= 1;
-				SpawnBullet(dirShot);
+				SpawnBullet(destMinusSource);
 			}
 			
 			if (numShots <= 0)
@@ -63,7 +63,7 @@ public class EnemySinWave : MonoBehaviour {
 		{
 			bulletCooldown -= Time.deltaTime;
 			
-			if (bulletCooldown <= 0.0f)
+			if (bulletCooldown <= 0.0f && !readyFire)
 			{
 				bulletCooldown = 2.25f;
 				readyFire = true;
@@ -96,12 +96,12 @@ public class EnemySinWave : MonoBehaviour {
 		Transform t = Instantiate(eBullet, pos, transform.rotation) as Transform;
 		GameObject bul = t.gameObject;
 		bul.GetComponent<SinWaveBullet>().SetVelocity(vel);
-		bul.transform.LookAt(GameGod.playerPos);
+		bul.transform.LookAt(dirShot);
 
 		t = Instantiate(eCosBullet, pos, transform.rotation) as Transform;
 		bul = t.gameObject;
 		bul.GetComponent<CosWaveBullet>().SetVelocity(vel);
-		bul.transform.LookAt(GameGod.playerPos);
+		bul.transform.LookAt(dirShot);
 	}
 	
 	public int GetHealth()

@@ -29,6 +29,8 @@ public class Player : MonoBehaviour {
 	Vector3 camRight;
 	Vector3 camBottom;
 
+	public AudioSource shotSFXSource;
+
 	void Awake()
 	{
 		GetComponent<ParticleSystem>().Play();
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour {
 		iWeaponLevel = 1;
 		iPowerupCounter = 0;
 		bSecondWeaponSpawned = false;
+		//shotSFXSource = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -120,6 +123,8 @@ public class Player : MonoBehaviour {
 				{
 					if (fAttackTimer >= fAttackSpeed)
 					{
+						//if (!shotSFXSource.isPlaying)
+							//shotSFXSource.Play();
 						SpawnBullet(transform.position, new Vector3(0.0f, 0.0f, 100.0f));
 						if (iWeaponLevel >= 2)
 							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(15.0f, 0.0f, 100.0f));
@@ -150,6 +155,8 @@ public class Player : MonoBehaviour {
 				{
 					if (fAttackTimer >= fAttackSpeed)
 					{
+						//if (!shotSFXSource.isPlaying)
+							//shotSFXSource.Play();
 						SpawnBullet(transform.position, new Vector3(0.0f, 0.0f, 100.0f));
 						if (iWeaponLevel >= 2)
 							SpawnBullet(new Vector3(transform.position.x + 4.0f, transform.position.y, transform.position.z), new Vector3(15.0f, 0.0f, 100.0f));
