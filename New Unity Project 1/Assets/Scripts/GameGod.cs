@@ -17,7 +17,7 @@ public class GameGod : MonoBehaviour {
 	static public bool bIsCutscenePlaying;
 	static bool created;
 	static int level1ApplicationNumber;		// The number within the Unity Build that signifies the first level of gameplay.
-	public enum eScriptNames {NONE = 0, LEFT_TO_RIGHT, RIGHT_TO_LEFT, SIN_WAVE,NUM_SCRIPTS};
+	public enum eScriptNames {NONE = 0, LEFT_TO_RIGHT, RIGHT_TO_LEFT, SIN_WAVE, FAST_LEFT_TO_RIGHT, FAST_RIGHT_TO_LEFT, NUM_SCRIPTS};
 
 	void Awake()
 	{
@@ -106,6 +106,19 @@ public class GameGod : MonoBehaviour {
 			enemy.AddComponent<SinWavePattern>();
 			break;
 		}
+
+		case 4:
+		{
+			enemy.AddComponent<FastLeftToRightPattern>();
+			break;
+		}
+
+		case 5:
+		{
+			enemy.AddComponent<FastRightToLeftPattern>();
+			break;
+		}
+
 		}
 
 		return enemy;

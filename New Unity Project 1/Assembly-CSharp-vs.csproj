@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\EnemySinWave.cs" />
      <Compile Include="Assets\Scripts\EnemyThreeShot.cs" />
      <Compile Include="Assets\Scripts\EnvironmentObject.cs" />
+     <Compile Include="Assets\Scripts\FastLeftToRightPattern.cs" />
+     <Compile Include="Assets\Scripts\FastRightToLeftPattern.cs" />
      <Compile Include="Assets\Scripts\GameBombs.cs" />
      <Compile Include="Assets\Scripts\GameGod.cs" />
      <Compile Include="Assets\Scripts\GameLives.cs" />
