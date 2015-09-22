@@ -1,15 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ShieldedEnemy.cs">
     <Files>
-      <File FileName="Assets\Scripts\FastRightToLeftPattern.cs" Line="37" Column="28" />
+      <File FileName="Assets\Scripts\EnemyShield.cs" Line="11" Column="16" />
+      <File FileName="Assets\Scripts\FastRightToLeftPattern.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\GameGod.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\FastLeftToRightPattern.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LeftToRightPattern.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\RightToLeftPattern.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EnemyRapidFire.cs" Line="105" Column="2" />
-      <File FileName="Assets\Scripts\EnemyBullet.cs" Line="6" Column="2" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="29" Column="85" />
+      <File FileName="Assets\Scripts\EnemyRapidFire.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyBullet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShieldedEnemy.cs" Line="50" Column="14" />
+      <File FileName="Assets\Scripts\EnemyThreeShot.cs" Line="23" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
