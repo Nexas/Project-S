@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		nHealth = 1;
-		bulletTimer = 1.5f;
+		bulletTimer = 1.0f;
 	}
 	
 	// Update is called once per frame
@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour {
 			toPlayer -= transform.position;
 			toPlayer.Normalize();
 			toPlayer *= 50.0f;
-			bulletTimer = 1.5f;
+			bulletTimer = 1.0f;
 			SpawnBullet(toPlayer);
 		}
 

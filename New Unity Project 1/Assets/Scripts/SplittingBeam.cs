@@ -12,7 +12,7 @@ public class SplittingBeam : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		deathTimer = 10.0f;
-		spawnTimer = 0.75f;
+		spawnTimer = 1.25f;
 	}
 	
 	// Update is called once per frame
@@ -38,7 +38,7 @@ public class SplittingBeam : MonoBehaviour {
 			SpawnBeam(125.0f, 45);
 			SpawnBeam(125.0f, 135);
 			SpawnBeam(125.0f, -135);
-			spawnTimer = 0.75f;
+			spawnTimer = 1.25f;
 		}
 
 		transform.Translate(new Vector3(0.0f, 0.0f, -50.0f) * Time.deltaTime);

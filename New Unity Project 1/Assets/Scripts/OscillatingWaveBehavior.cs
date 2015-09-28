@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OscillatingWave : BaseBehavior {
+public class OscillatingWaveBehavior : BaseBehavior {
 
 	bool bSweepingLeft;			// Are the shots being swept left or right?
 	float fAngleToAttack;

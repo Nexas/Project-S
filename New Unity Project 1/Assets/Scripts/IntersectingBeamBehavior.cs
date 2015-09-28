@@ -7,6 +7,7 @@ public class IntersectingBeamBehavior : BaseBehavior {
 	float fBeamPosY;
 	public Transform eBeam;
 	public Transform eSplittingBeam;
+	public Transform eBullet;
 	Vector3 camRight;
 	Vector3 camLeft;
 	Vector3 camTop;
@@ -16,8 +17,9 @@ public class IntersectingBeamBehavior : BaseBehavior {
 	void Start () {
 		fBeamPosX = 0.0f;
 		fBeamPosY = 0.0f;
-		nBulletCount = 18;
+		nBulletCount = 20;
 		fAttackSpeed = 0.2f;
+		fAttackCooldown = 1.75f;
 	}
 	
 	// Update is called once per frame
@@ -35,7 +37,7 @@ public class IntersectingBeamBehavior : BaseBehavior {
 			fAttackCooldown -= Time.deltaTime;
 			if (fAttackCooldown <= 0.0f)
 			{
-				fAttackCooldown = 1.25f;
+				fAttackCooldown = 1.75f;
 				bReadyToAttack = true;
 			}
 		}
@@ -50,36 +52,36 @@ public class IntersectingBeamBehavior : BaseBehavior {
 				Vector3 rotation = new Vector3(0.0f, 0.0f, 0.0f);
 
 				// Vertical Spawning
-				for (int i = 0; i < 9; ++i)
+				for (int i = 0; i < 10; ++i)
 				{
 					position = camTop;
-					position.x += Mathf.Abs(fBeamPosX * camTop.x);
+					position.x += Mathf.Abs((camRight.x - camLeft.x) * fBeamPosX);
 					position.y = 0.1f;
 					rotation.Set(0.0f, 180.0f, 0.0f);
 					SpawnBeam(velocity, position, rotation);
 					nBulletCount -= 1;
-					fBeamPosX += 0.2f;
+					fBeamPosX += 0.1f;
 				}
 
-				for (int i = 0; i < 9; ++i)
+				for (int i = 0; i < 10; ++i)
 				{
 					if (leftSpawn)
 					{
 						position = camLeft;
-						position.z += Mathf.Abs(fBeamPosY * camTop.z);
+						position.z += Mathf.Abs((camTop.z - camLeft.z) * fBeamPosY);
 						velocity.Set(250.0f, 0.0f, 0.0f);
 						rotation.Set(0.0f, 90.0f, 0.0f);
 					}
 					else
 					{
 						position = camRight;
-						position.z += Mathf.Abs(fBeamPosY * camTop.z);
+						position.z += Mathf.Abs((camTop.z - camRight.z) * fBeamPosY);
 						velocity.Set(-250.0f, 0.0f, 0.0f);
 						rotation.Set(0.0f, -90.0f, 0.0f);
 					}
 					SpawnBeam(velocity, position, rotation);
 
-					fBeamPosY += 0.2f;
+					fBeamPosY += 0.1f;
 					leftSpawn = !leftSpawn;
 					nBulletCount -= 1;
 				}
@@ -92,6 +94,20 @@ public class IntersectingBeamBehavior : BaseBehavior {
 				nBulletCount = 18;
 				fBeamPosX = 0.0f;
 				fBeamPosY = 0.0f;
+
+				Vector3 toPlayer = GameGod.playerPos;
+				toPlayer -= transform.position;
+				toPlayer.Normalize();
+				toPlayer *= 35.0f;
+				SpawnBullet(toPlayer);
+				toPlayer = Quaternion.AngleAxis(-15, Vector3.up) * toPlayer;
+				SpawnBullet(toPlayer);
+				toPlayer = Quaternion.AngleAxis(-15, Vector3.up) * toPlayer;
+				SpawnBullet(toPlayer);
+				toPlayer = Quaternion.AngleAxis(45, Vector3.up) * toPlayer;
+				SpawnBullet(toPlayer);
+				toPlayer = Quaternion.AngleAxis(15, Vector3.up) * toPlayer;
+				SpawnBullet(toPlayer);
 			}
 		}	
 	}
@@ -109,5 +125,12 @@ public class IntersectingBeamBehavior : BaseBehavior {
 		Transform t = Instantiate(eSplittingBeam, pos, transform.rotation) as Transform;
 		GameObject bul = t.gameObject;
 		bul.GetComponent<SplittingBeam> ().spawnTimer = 1.75f;
+	}
+
+	void SpawnBullet(Vector3 vel)
+	{
+		Transform t = Instantiate(eBullet, this.transform.position, transform.rotation) as Transform;
+		GameObject bul = t.gameObject;
+		bul.GetComponent<EnemyBullet>().SetVelocity(vel);	
 	}
 }

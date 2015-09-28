@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BossMechaShark : MonoBehaviour {
@@ -11,8 +11,10 @@ public class BossMechaShark : MonoBehaviour {
 	Vector3 camLeft;
 	Vector3 camBot;
 	Vector3 camTop;
-	public OscillatingWave phase1;
-	public SplittingBeamBehavior phase2;
+	float fAttackSpeed;
+	public Transform eBullet;
+	public OscillatingWaveBehavior phase1;
+	public SweepingBulletBehavior phase2;
 	public IntersectingBeamBehavior phase3;
 	public Material[] materials;
 	float flashTimer;			// How long to flash white.
@@ -26,11 +28,12 @@ public class BossMechaShark : MonoBehaviour {
 		nCurrentHealth = nMaxHealth;
 		nPhase = 1;
 		bOnScreen = false;
-		phase1 = GetComponent<OscillatingWave>();
-		phase2 = GetComponent<SplittingBeamBehavior>();
+		phase1 = GetComponent<OscillatingWaveBehavior>();
+		phase2 = GetComponent<SweepingBulletBehavior>();
 		phase3 = GetComponent<IntersectingBeamBehavior>();
 		flashTimer = 0.05f;
 		isFlashing = false;
+		fAttackSpeed = 0.25f;
 	}
 	
 	// Update is called once per frame
@@ -39,6 +42,8 @@ public class BossMechaShark : MonoBehaviour {
 		camRight = Camera.main.ScreenToWorldPoint(new Vector3 (Screen.width, 0.0f, 100.0f));
 		camTop = Camera.main.ScreenToWorldPoint(new Vector3 (0.0f, Screen.height, 100.0f));
 		camBot = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 100.0f));
+
+		fAttackSpeed -= Time.deltaTime;
 
 		if (!bOnScreen && transform.position.z + 7.5f < camTop.z)
 		{
@@ -57,18 +62,32 @@ public class BossMechaShark : MonoBehaviour {
 			}
 		}
 
+		if (GameGod.playerPos.z > transform.position.z && fAttackSpeed <= 0.0f)
+		{
+			Vector3 toPlayer = GameGod.playerPos;
+			toPlayer -= transform.position;
+			toPlayer.Normalize();
+			toPlayer *= 50.0f;
+			fAttackSpeed = 0.25f;
+			SpawnBullet(toPlayer);
+		}
+
 		// TODO: Remove this testing code.
 		if (Input.GetKey(KeyCode.T))
 		{
 			nPhase = 2;
 			nCurrentHealth = (int)(nMaxHealth * .66f);
-			phase3.SetActive(true);
+			phase3.SetActive(false);
+			phase2.SetActive(true);
 			phase1.SetActive(false);
 		}
 		if (Input.GetKey(KeyCode.U))
 		{
 			nPhase = 3;
 			nCurrentHealth = (int)(nMaxHealth * .33f);
+			phase1.SetActive(false);
+			phase2.SetActive(false);
+			phase3.SetActive(true);
 		}
 	}
 
@@ -102,10 +121,16 @@ public class BossMechaShark : MonoBehaviour {
 				nPhase = 2;
 				phase2.SetActive(true);
 				phase1.SetActive(false);
+				phase3.SetActive(false);
+				this.GetComponent<ParticleSystem>().Play();
 			}
 			else if (nCurrentHealth <= (nMaxHealth * .33f) && nPhase < 3)
 			{
 				nPhase = 3;
+				phase3.SetActive(true);
+				phase2.SetActive(false);
+				phase1.SetActive(false);
+				this.GetComponent<ParticleSystem>().Play();
 			}
 			else if (nCurrentHealth <= 0.0f)
 			{
@@ -132,4 +157,11 @@ public class BossMechaShark : MonoBehaviour {
             GUI.DrawTexture(new Rect(0, 0, ((float)nCurrentHealth / (float)nMaxHealth) * (float)Screen.width, 16), fgLifeBar);
         }
     }
+
+	void SpawnBullet(Vector3 vel)
+	{
+		Transform t = Instantiate(eBullet, this.transform.position, transform.rotation) as Transform;
+		GameObject bul = t.gameObject;
+		bul.GetComponent<EnemyBullet>().SetVelocity(vel);	
+	}
 }

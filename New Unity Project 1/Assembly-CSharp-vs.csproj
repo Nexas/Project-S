@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AlphaNumericSort.cs" />
      <Compile Include="Assets\Scripts\BaseBehavior.cs" />
      <Compile Include="Assets\Scripts\BossMechaShark.cs" />
      <Compile Include="Assets\Scripts\Bullet.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\Scripts\EnemyBeam.cs" />
      <Compile Include="Assets\Scripts\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\EnemyDeathEffect.cs" />
+     <Compile Include="Assets\Scripts\EnemyDelayBullet.cs" />
      <Compile Include="Assets\Scripts\EnemyMine.cs" />
      <Compile Include="Assets\Scripts\EnemyRapidFire.cs" />
      <Compile Include="Assets\Scripts\EnemyShield.cs" />
@@ -84,7 +86,7 @@
      <Compile Include="Assets\Scripts\OptionsMenu.cs" />
      <Compile Include="Assets\Scripts\OptionsMouse.cs" />
      <Compile Include="Assets\Scripts\OptionsTitle.cs" />
-     <Compile Include="Assets\Scripts\OscillatingWave.cs" />
+     <Compile Include="Assets\Scripts\OscillatingWaveBehavior.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerBomb.cs" />
      <Compile Include="Assets\Scripts\PlayerOrb.cs" />
@@ -96,6 +98,7 @@
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\SplittingBeam.cs" />
      <Compile Include="Assets\Scripts\SplittingBeamBehavior.cs" />
+     <Compile Include="Assets\Scripts\SweepingBulletBehavior.cs" />
      <Compile Include="Assets\Scripts\TextureUVOffsetY.cs" />
      <Compile Include="Assets\Scripts\WeaponPowerup.cs" />
  <Reference Include="UnityEngine.UI">
